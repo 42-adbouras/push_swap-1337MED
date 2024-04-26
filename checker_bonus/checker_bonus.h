@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_inserion.c                                      :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 11:32:18 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/25 11:22:06 by adbouras         ###   ########.fr       */
+/*   Created: 2024/04/25 20:07:55 by adbouras          #+#    #+#             */
+/*   Updated: 2024/04/25 20:10:16 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-int	*ft_insertion(t_stack *lst)
-{
-	int	*arr;
-	int	tmp;
-	int	i;
-	int	j;
+# include "../push_swap.h"
 
-	arr = ft_clone_stack(lst);
-	i = 1;
-	while (i < ft_lstsize_ps(lst))
-	{
-		tmp = arr[i];
-		j = i - 1;
-		while (tmp < arr[j] && j >= 0)
-		{
-			arr[j + 1] = arr[j];
-			j--;
-		}
-		arr[j + 1] = tmp;
-		i++;
-	}
-	return (arr);
-}
+#endif

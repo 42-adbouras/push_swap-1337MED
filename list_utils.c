@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:20:05 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/16 10:23:30 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:36:16 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_lstsize_ps(t_stack *lst)
 t_stack	*ft_lstnew_ps(int n)
 {
 	t_stack		*node;
-	static int	index;
+	static int	index; 
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (node == NULL)
@@ -73,8 +73,8 @@ void	ft_lstclear_ps(t_stack **lst)
 	while (node != NULL)
 	{
 		tmp = node;
-		free(tmp);
 		node = node->next;
+		free(tmp);
 	}
 	*lst = NULL;
 }

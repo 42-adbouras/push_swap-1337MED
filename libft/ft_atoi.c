@@ -6,13 +6,12 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:58:03 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/24 14:19:33 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:32:17 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "../push_swap.h"
-#include <limits.h>
 
 void	ft_verify(int c)
 {

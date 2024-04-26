@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:36:40 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/17 19:27:54 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:23:52 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ bool	if_sorted(t_stack *lst)
 {
 	t_stack	*head;
 
+	if (!lst)
+		return (false);
 	head = lst;
 	while (head->next != NULL)
 	{

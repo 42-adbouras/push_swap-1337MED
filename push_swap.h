@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:08:18 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/24 16:20:41 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:12:15 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 # include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
-# include "./bonus/get_next_line/get_next_line.h"
+# include "./get_next_line/get_next_line.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include <stdio.h>
 
 typedef struct stack_list
 {

@@ -6,11 +6,43 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:37:04 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/24 16:33:37 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:11:16 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
+
+bool	ft_check_move(char *move);
+void	ft_move_exe(char *move, t_stack **a, t_stack **b);
+
+int	main(int ac, char **av)
+{
+	t_stack	*a;
+	t_stack	*b;
+	int		i;
+	char	*move;
+
+	(void) ac;
+	i = 1;
+	while (av[i])
+		ft_stack_init(&a, av[i++]);
+	while (1)
+	{
+		move = get_next_line(0);
+		if (!move)
+			break ;
+		if (!ft_check_move(move))
+			exit_err();
+		ft_move_exe(move, &a, &b);
+		free(move);
+	}
+	if (if_sorted(a) && !b)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+	ft_lstclear_ps(&a);
+	return (0);
+}
 
 bool	ft_check_move(char *move)
 {
@@ -42,33 +74,4 @@ void	ft_move_exe(char *move, t_stack **a, t_stack **b)
 		ft_rev_rotate(a);
 	if (!ft_strncmp(move, "rrb\n", 4) || !ft_strncmp(move, "rrr\n", 4))
 		ft_rev_rotate(b);
-}
-
-int	main(int ac, char **av)
-{
-	t_stack	*a;
-	t_stack	*b;
-	int		i;
-	char	*move;
-
-	(void) ac;
-	i = 1;
-	while (av[i])
-		ft_stack_init(&a, av[i++]);
-	while (1)
-	{
-		move = get_next_line(0);
-		if (!move || move[0] == '\n')
-			break ;
-		if (!ft_check_move(move))
-			exit_err();
-		ft_move_exe(move, &a, &b);
-		free(move);
-	}
-	if (if_sorted(a) && !b)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
-	ft_lstclear_ps(&a);
-	return (0);
 }

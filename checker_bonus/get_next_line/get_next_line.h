@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_inserion.c                                      :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 11:32:18 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/25 11:22:06 by adbouras         ###   ########.fr       */
+/*   Created: 2024/01/17 13:53:19 by adbouras          #+#    #+#             */
+/*   Updated: 2024/04/23 10:04:44 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	*ft_insertion(t_stack *lst)
-{
-	int	*arr;
-	int	tmp;
-	int	i;
-	int	j;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-	arr = ft_clone_stack(lst);
-	i = 1;
-	while (i < ft_lstsize_ps(lst))
-	{
-		tmp = arr[i];
-		j = i - 1;
-		while (tmp < arr[j] && j >= 0)
-		{
-			arr[j + 1] = arr[j];
-			j--;
-		}
-		arr[j + 1] = tmp;
-		i++;
-	}
-	return (arr);
-}
+# include <unistd.h>
+# include <stdlib.h>
+
+int		ft_strlen_gnl(char *s);
+char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strchr_gnl(char *s, int c);
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
+
+#endif
