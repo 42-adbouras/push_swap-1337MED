@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:37:04 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/25 20:11:16 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:02:33 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 bool	ft_check_move(char *move);
 void	ft_move_exe(char *move, t_stack **a, t_stack **b);
+void	ft_print_output(t_stack *a, t_stack *b);
 
 int	main(int ac, char **av)
 {
@@ -22,7 +23,8 @@ int	main(int ac, char **av)
 	int		i;
 	char	*move;
 
-	(void) ac;
+	if (ac == 1)
+		return (0);
 	i = 1;
 	while (av[i])
 		ft_stack_init(&a, av[i++]);
@@ -36,12 +38,18 @@ int	main(int ac, char **av)
 		ft_move_exe(move, &a, &b);
 		free(move);
 	}
+	ft_print_output(a, b);
+	ft_lstclear_ps(&a);
+	ft_lstclear_ps(&b);
+	return (0);
+}
+
+void	ft_print_output(t_stack *a, t_stack *b)
+{
 	if (if_sorted(a) && !b)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	ft_lstclear_ps(&a);
-	return (0);
 }
 
 bool	ft_check_move(char *move)

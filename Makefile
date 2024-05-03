@@ -6,12 +6,13 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/02 22:15:20 by adbouras          #+#    #+#              #
-#    Updated: 2024/04/26 16:11:28 by adbouras         ###   ########.fr        #
+#    Updated: 2024/05/02 18:37:00 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 GREEN = '\033[1;92m'
 YELLOW = '\033[0;93m'
+RED='\033[1;91m'
 DEF_COLOR = '\033[0;39m'
 
 CC = cc
@@ -29,6 +30,8 @@ OBJ = $(SRC:.c=.o)
 
 MAIN = main.c \
 
+MAIN_OBJ = $(MAIN:.c=.o)
+
 BNS_SRC = ./checker_bonus/checker_bonus.c \
 	get_next_line/get_next_line.c \
 	get_next_line/get_next_line_utils.c \
@@ -39,29 +42,30 @@ LIBFT = libft/libft.a
 
 PRINTF = ft_printf/libftprintf.a
 
-$(NAME): $(OBJ) $(MAIN)
-	@echo $(YELLOW)"\n____________________ Compiling Libft ____________________\n"$(DEF_COLOR)
+
+$(NAME): $(OBJ) $(MAIN_OBJ)
+	@echo $(YELLOW)"\n░░░░░░░ Compiling Libft ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 	make -C libft
 	make bonus -C libft
-	@echo $(GREEN)"\n____________________ Libft Compiled ____________________\n"$(DEF_COLOR)
-	@echo $(YELLOW)"\n__________________ Compiling ft_printf __________________\n"$(DEF_COLOR)
+	@echo $(GREEN) "\n░░░░░░░░ Libft Compiled ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
+	@echo $(YELLOW)"\n░░░░░░░░ Compiling ft_printf ░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 	make -C ft_printf
-	@echo $(GREEN)"\n__________________ ft_printf Compiled __________________\n"$(DEF_COLOR)
-	@echo $(YELLOW)"\n__________________ Compiling push_swap __________________\n"$(DEF_COLOR)
+	@echo $(GREEN) "\n░░░░░░░░ ft_printf Compiled ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
+	@echo $(YELLOW)"\n░░░░░░░░ Compiling push_swap ░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 	$(CC) $(CFLAGS) $(OBJ) $(MAIN) $(LIBFT) $(PRINTF) -o $(NAME)
-	@echo $(GREEN)"\n__________________ push_swap Compiled __________________\n"$(DEF_COLOR)
+	@echo $(GREEN) "\n░░░░░░░░ push_swap Compiled ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 
 $(BONUS): $(OBJ) $(BOBJECT)
-	@echo $(YELLOW)"\n____________________ Compiling Libft ____________________\n"$(DEF_COLOR)
+	@echo $(YELLOW)"\n░░░░░░░░ Compiling Libft ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 	make -C libft
 	make bonus -C libft
-	@echo $(GREEN)"\n____________________ Libft Compiled ____________________\n"$(DEF_COLOR)
-	@echo $(YELLOW)"\n__________________ Compiling ft_printf __________________\n"$(DEF_COLOR)
+	@echo $(GREEN) "\n░░░░░░░░ Libft Compiled ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
+	@echo $(YELLOW)"\n░░░░░░░░ Compiling ft_printf ░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 	make -C ft_printf
-	@echo $(GREEN)"\n__________________ ft_printf Compiled __________________\n"$(DEF_COLOR)
-	@echo $(YELLOW)"\n___________________ Compiling Bonus ___________________\n"$(DEF_COLOR)
+	@echo $(GREEN) "\n░░░░░░░░ ft_printf Compiled ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
+	@echo $(YELLOW)"\n░░░░░░░░ Compiling Bonus ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 	$(CC) $(CFLAGS) $(OBJ) $(BOBJECT) $(LIBFT) $(PRINTF) -o $(BONUS)
-	@echo $(GREEN)"\n____________________ Bonus Compiled ____________________\n"$(DEF_COLOR)
+	@echo $(GREEN) "\n░░░░░░░░ Bonus Compiled ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 
 all: $(NAME)
 
@@ -71,25 +75,15 @@ clean:
 	make clean -C libft
 	make clean -C ft_printf
 	rm -f $(OBJ)
+	rm -f $(MAIN_OBJ)
 	rm -f $(BOBJECT)
+	@echo $(RED)   "\n░░░░░░░░ Objects Cleaned ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 
 fclean:	clean
 	make fclean -C libft
 	make fclean -C ft_printf
 	rm -f $(NAME)
 	rm -f $(BONUS)
+	@echo $(RED)   "\n░░░░░░░░ EXE Cleaned ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"$(DEF_COLOR)
 
 re:	fclean all
-
-
-
-
-#	@make -C libft
-#	@make bonus -C libft
-#	@make -C ft_printf
-#	$(CC) $(CFLAGS) $(SRC) $(MAIN) $(LIBFT) $(PRINTF) -o $(NAME)
-
-#$(BONUS): $(BNS_SRC) $(LIBFT) $(PRINTF)
-#	@echo $(YELLOW)"\n____________________ Compiling Bonus ____________________\n"$(DEF_COLOR)
-#	$(CC) $(CFLAGS) $(SRC) $(BNS_SRC) $(LIBFT) $(PRINTF) -o $(BONUS)
-#	@echo $(GREEN)"\n____________________ Bonus Compiled ____________________\n"$(DEF_COLOR)

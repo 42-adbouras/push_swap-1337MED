@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:08:09 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/23 10:53:19 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:25:06 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,24 @@ void	ft_sort_five(t_stack **lst_a, t_stack **lst_b)
 	min = ft_find_min(*lst_a);
 	while ((*lst_a)->value != min->value)
 	{
-		if (min->index > 2)
-			ft_rra(lst_a);
-		else
+		if (min->index <= 2)
 			ft_ra(lst_a);
+		else
+			ft_rra(lst_a);
 	}
 	ft_push_b(lst_a, lst_b);
 	min = ft_find_min(*lst_a);
 	ft_re_index(*lst_a);
 	while ((*lst_a)->value != min->value)
 	{
-		if (min->index > 2)
-			ft_rra(lst_a);
-		else
+		if (min->index < 2)
 			ft_ra(lst_a);
+		else
+			ft_rra(lst_a);
 	}
 	ft_push_b(lst_a, lst_b);
 	ft_sort_three(lst_a);
-	ft_push_a(lst_b, lst_a);
-	ft_push_a(lst_b, lst_a);
+	ft_migrate_b(lst_a, lst_b);
 }
 
 void	ft_big_sort(t_stack **lst_a, t_stack **lst_b, int range)
@@ -99,7 +98,7 @@ void	ft_stack_init(t_stack **lst, char *arg)
 		if (new == NULL)
 		{
 			ft_lstclear_ps(lst);
-			return (free(arr));
+			return (free_char(arr));
 		}
 		ft_lstadd_back_ps(lst, new);
 		i++;

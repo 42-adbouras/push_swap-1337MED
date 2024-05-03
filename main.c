@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:23:52 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/25 12:13:13 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:46:13 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	main(int ac, char **av)
 	t_stack	*b;
 	int		i;
 
-	i = 1;
+	i = 0;
 	if (ac == 1)
 		return (1);
-	while (av[i])
-		ft_stack_init(&a, av[i++]);
+	while (av[++i])
+		ft_stack_init(&a, av[i]);
 	if (!if_sorted(a))
 	{
 		if (ft_lstsize_ps(a) <= 3)

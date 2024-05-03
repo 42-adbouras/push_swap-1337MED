@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:36:40 by adbouras          #+#    #+#             */
-/*   Updated: 2024/04/25 19:23:52 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:58:44 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	ft_migrate_b(t_stack **lst_a, t_stack **lst_b)
 {
 	t_stack	*max;
 
+	if (!*lst_b)
+		return ;
 	while ((*lst_b) != NULL)
 	{
 		max = ft_find_max(*lst_b);
