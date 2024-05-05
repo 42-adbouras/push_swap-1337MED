@@ -11,14 +11,14 @@ These are the allowed moves:
 `ss` : `sa` and `sb` at the same time.
 
 <p align="center">
-<img src="https://github.com/42-adbouras/images/blob/master/push_swap/Screen%20Shot%202024-04-26%20at%204.42.37%20PM.png" style="width:700px"/>
+<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928405/push_swap/Screen_Shot_2024-04-26_at_4.42.37_PM_finxjh.png" style="width:700px"/>
 </p>
 
 `pa` : push a - take the first element at the top of b and put it at the top of a. Do nothing if b is empty.\
 `pb` : push b - take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
 
 <p align="center">
-<img src="https://github.com/42-adbouras/images/blob/master/push_swap/Screen%20Shot%202024-04-26%20at%204.44.35%20PM.png" style="width:700px"/>
+<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928405/push_swap/Screen_Shot_2024-04-26_at_4.44.35_PM_vmd19v.png" style="width:700px"/>
 </p>
 
 `ra` : rotate a - shift up all elements of stack a by 1. The first element becomes the last one.\
@@ -26,7 +26,7 @@ These are the allowed moves:
 `rr` : `ra` and `rb` at the same time.
 
 <p align="center">
-<img src="https://github.com/42-adbouras/images/blob/master/push_swap/Screen%20Shot%202024-04-26%20at%204.43.18%20PM.png" style="width:700px"/>
+<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928404/push_swap/Screen_Shot_2024-04-26_at_4.43.18_PM_tkjaw6.png" style="width:700px"/>
 </p>
 
 `rra` : reverse rotate a - shift down all elements of stack a by 1. The last element becomes the first one.\
@@ -34,7 +34,7 @@ These are the allowed moves:
 `rrr` : `rra` and `rrb` at the same time.
 
 <p align="center">
-<img src="https://github.com/42-adbouras/images/blob/master/push_swap/Screen%20Shot%202024-04-26%20at%204.44.04%20PM.png" style="width:700px"/>
+<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928405/push_swap/Screen_Shot_2024-04-26_at_4.44.04_PM_yflfft.png" style="width:700px"/>
 </p>
 
 # Mandatory
@@ -65,7 +65,7 @@ These are the allowed moves:
 To sort three number is very easy and trivial, What I do, I check if the head is the bigger element, if so I execute `ft_ra()`, if thats not the case, I check if the second element is the biggest and I execute `ft_rra()`. Securing the bigger element at the tail, from here I compaire the first two element if the first element major than the second I execute you have a sorted three element under two instruction.
 
 		<p align="center">
-		<img src="https://github.com/42-adbouras/images/blob/master/push_swap/Screen%20Shot%202024-04-30%20at%208.46.37%20PM.png" style="width:700px"/>
+		<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928405/push_swap/Screen_Shot_2024-04-30_at_8.46.37_PM_d06glp.png" style="width:700px"/>
 		</p>
 
 		* Part II: If stack size miner than five.\
@@ -73,7 +73,7 @@ To sort five element I rely on the algorithm that sorts three element. What I do
 With two element at stack `b` and three at stack `a`, I sort `a` with `ft_sort_three()` and push back the two elements using `ft_pa()`. And this is how I managed to sort five element.
 
 		<p align="center">
-		<img src="https://github.com/42-adbouras/images/blob/master/push_swap/Screen%20Shot%202024-05-04%20at%2012.53.07%20PM.png" style="width:700px"/>
+		<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928406/push_swap/Screen_Shot_2024-05-04_at_12.53.07_PM_pjorhy.png" style="width:700px"/>
 		</p>
 
 		* Part III & IV:\
@@ -84,13 +84,13 @@ Now that you have a range you check if the head of the stack `a` `pose` is betwe
 Now that stack `a` is empty, we are going to work on stack `b`. If everything went right, the element at stack `b` would be kind of sorted from the biggest to the smallest being at the middle.
 
 		<p align="center">
-		<img src="https://github.com/42-adbouras/images/blob/master/push_swap/Screen%20Shot%202024-05-04%20at%2012.29.49%20PM.png" style="width:700px"/>
+		<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928405/push_swap/Screen_Shot_2024-05-04_at_12.29.49_PM_erqueu.png" style="width:700px"/>
 		</p>
 Now that `Hourglass` make some sence.
-All we have to do now is look for the biggest element on stack `b` and rotate it the the head then push it back, same drill using `ft_rb()` or `ft_rrb` depending on the element's index wether it is on the first half or second, we repeat this untill `b` is empty.
+All we have to do now is look for the biggest element on stack `b` and rotate it to the head then push it back, same drill using `ft_rb()` or `ft_rrb` depending on the element's index whether it is on the first half or second, we repeat this untill `b` is empty.
 And that is all to it you have a sorted stack `a`.
 		<p align="center">
-		<img src="https://github.com/42-adbouras/images/blob/master/push_swap/ScreenRecording2024-05-04at1.05.55PM-ezgif.com-video-to-gif-converter.gif" style="width:700px"/>
+		<img src="https://res.cloudinary.com/dk2hh5aua/image/upload/v1714928407/push_swap/ScreenRecording2024-05-04at1.05.55PM-ezgif.com-video-to-gif-converter_wowapc.gif" style="width:700px"/>
 		</p>
 
 
